@@ -1,10 +1,11 @@
 import React,{useState} from 'react'
 import {useDispatch, useSelector} from "react-redux"
+import Spinner from "../components/Spinner"
 
 /* Redux actions */
 import {createProductAction} from "../actions/ProductsAction"
 
-export default function NewProduct() {
+export default function NewProduct({history}) {
 
     const [name, setName] = useState("")
     const [price, setPrice] = useState("") 
@@ -12,21 +13,26 @@ export default function NewProduct() {
     // Utilizamos useDispatch que nos devuelve una funcion
     const dispatch = useDispatch()
 
+    //Acceder al state del store
+    const loading = useSelector(state => state.products.loading)
+    const error = useSelector(state => state.products.error)
+
     // Llamamos el action de ProductAction
-    const addNewProduct = (product) => dispatch(createProductAction(product))
+    const addNewProduct = (product) => dispatch(createProductAction(product, history))
 
     const handleSubmit = (e) => {
         e.preventDefault()
 
-        if(!name.trim() || price < 1) {
+        if(!name.trim() || !price || price < 1) {
             return
         }
-        //Validar Form
+      
         //crear nuevo producto
         addNewProduct({
             name,
             price
         })
+        
     }
     return (
         <div className="row justify-content-center">
@@ -71,6 +77,13 @@ export default function NewProduct() {
                                 className="btn btn-primary font-weight-bold text-uppercase d-block w-100"
                             >Agregar</button>
                         </form>
+                        {loading && 
+                            <>
+                                <Spinner />
+                                <p className="text-center">Cargando...</p>
+                            </>
+                        }
+                        {error && <p className="alert alert-danger p2 mt-4 text-center h6">Hubo un error</p>}
                     </div>
                 </div>
             </div>
