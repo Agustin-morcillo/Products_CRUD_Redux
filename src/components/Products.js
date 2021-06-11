@@ -34,27 +34,32 @@ export default function Products() {
                     <p className="text-center">Cargando...</p>
                 </>
             }
-            <table className="table table-striped">
-                <thead className="bg-primary table-dark">
-                    <tr>
-                        <th scope="col">Nombre</th>
-                        <th scope="col">Precio</th>
-                        <th scope="col">Acciones</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    {
-                        products.length < 1 ? "No hay productos" 
-                        :
-                        products.map(product => (
-                            <Product 
-                                key={product.id}
-                                product={product}
-                            />
-                        ))
-                    }
-                </tbody>
-            </table>
+                
+            {
+                products.length < 1 && !loading
+                ?
+                <p className="no-product bg-info">No hay productos</p>
+                :
+                <table className="table table-striped">
+                    <thead className="bg-primary table-dark">
+                        <tr>
+                            <th scope="col">Nombre</th>
+                            <th scope="col">Precio</th>
+                            <th scope="col">Acciones</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {
+                            products.map(product => (
+                                <Product 
+                                    key={product.id}
+                                    product={product}
+                                />
+                            ))
+                        }
+                    </tbody>
+                </table>
+            }
         </>
     )
 }
