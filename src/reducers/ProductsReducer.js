@@ -1,7 +1,10 @@
 import {
-    ADD_PRODUCT,
+    ADD_PRODUCT_LOADING,
     ADD_PRODUCT_SUCCESSFUL,
-    ADD_PRODUCT_ERROR
+    ADD_PRODUCT_ERROR,
+    GET_PRODUCTS_LOADING,
+    GET_PRODUCTS_SUCCESSFUL,
+    GET_PRODUCTS_ERROR
 } from "../types"
 
 
@@ -14,10 +17,11 @@ const initalState = {
 
 export default function(state = initalState, action) {
     switch (action.type) {
-        case ADD_PRODUCT:
+        case ADD_PRODUCT_LOADING:
+        case GET_PRODUCTS_LOADING:
             return {
                 ...state,
-                loading: true,
+                loading: action.payload,
             }
         case ADD_PRODUCT_SUCCESSFUL:
             return {
@@ -26,9 +30,16 @@ export default function(state = initalState, action) {
                 loading: false,
             }
         case ADD_PRODUCT_ERROR:
+        case GET_PRODUCTS_ERROR:
             return {
                 ...state,
                 error: action.payload,
+                loading: false
+            }
+        case GET_PRODUCTS_SUCCESSFUL:
+            return {
+                products: action.payload,
+                error: false,
                 loading: false
             }
         default:
