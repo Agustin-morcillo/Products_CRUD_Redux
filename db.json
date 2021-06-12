@@ -24,26 +24,6 @@
       "name": "Jugo de Fresa",
       "price": "200",
       "id": 5
-    },
-    {
-      "name": "Agustin",
-      "price": 600,
-      "id": 6
-    },
-    {
-      "name": "Agustin",
-      "price": 500,
-      "id": 7
-    },
-    {
-      "name": "Agustin",
-      "price": 400,
-      "id": 8
-    },
-    {
-      "name": "Jugo de Morci",
-      "price": 300,
-      "id": 9
     }
   ]
 }

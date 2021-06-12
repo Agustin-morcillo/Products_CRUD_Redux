@@ -36,7 +36,7 @@ export default function Products() {
             }
                 
             {
-                products.length < 1 && !loading
+                products.length < 1
                 ?
                 <p className="no-product bg-info">No hay productos</p>
                 :
