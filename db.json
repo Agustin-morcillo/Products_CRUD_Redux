@@ -2,8 +2,8 @@
   "products": [
     {
       "id": 1,
-      "name": "Jugo de Zanahoria",
-      "price": "300"
+      "name": "Jugo de Zanahorias",
+      "price": "500"
     },
     {
       "id": 2,
@@ -24,6 +24,11 @@
       "name": "Jugo de Fresa",
       "price": "200",
       "id": 5
+    },
+    {
+      "name": "Agustin",
+      "price": 200,
+      "id": 6
     }
   ]
 }
