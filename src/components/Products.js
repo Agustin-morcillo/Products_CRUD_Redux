@@ -1,5 +1,6 @@
 import React,{useEffect} from 'react'
 import {useDispatch, useSelector} from "react-redux"
+import {Link} from "react-router-dom"
 import Product from './Product';
 import Spinner from './Spinner';
 
@@ -19,11 +20,20 @@ export default function Products() {
     useEffect(() => {
         const getProducts = () => dispatch(getProductsAction()) 
         getProducts()
+        // eslint-disable-next-line
     }, [])
     
     return (
         <>
             <h2 className="text-center my-5">Listado de Productos</h2>
+
+            <div className="create-btn">
+                <Link to={"/products/create"} 
+                    className="btn btn-success new-product d-block d-md-inline-block add-btn">
+                <i className="fas fa-plus icon"></i> Agregar Producto</Link>
+            </div>
+
+           
 
             {error && <p className="font-weight-bold alert alert-danger text-center mt-4">Hubo un error</p>}
 
@@ -52,7 +62,7 @@ export default function Products() {
                         {
                             products.map(product => (
                                 <Product 
-                                    key={product.id}
+                                    key={product.id + 1}
                                     product={product}
                                 />
                             ))

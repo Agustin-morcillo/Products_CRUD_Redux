@@ -38,18 +38,18 @@ export default function Product({product}) {
         <tr>
             <td>{name}</td>
             <td><span className="font-weight-bold">${price}</span></td>
-            <td className="acciones">
+            <td className="actions">
                 <button
                     type="button"
-                    className="btn btn-primary mr-2"
+                    className="btn btn-warning mr-2 buttons action-btn edit-btn"
                     onClick={()=> EditProductRedirect(product)}
-                >Editar</button>
+                ><i className="fas fa-edit icon"></i>Editar</button>
                 
                 <button
                     type="button"
-                    className="btn btn-danger"
+                    className="btn btn-danger buttons action-btn"
                     onClick={()=> deleteProduct(id)}
-                >Eliminar</button>
+                ><i className="far fa-trash-alt icon"></i>Eliminar</button>
             </td>
         </tr>
     )

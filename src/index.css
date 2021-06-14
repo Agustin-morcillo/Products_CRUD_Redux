@@ -13,11 +13,13 @@ body {
 h1 a {
   font-size: 1.8rem;
 }
+
 h1 a.text-light:hover {
   color: white!important;
   text-decoration: none!important;
 }
-.nuevo-post{
+
+.new-product{
   font-weight: bold;
   text-transform: uppercase;
 }
@@ -25,30 +27,48 @@ h1 a.text-light:hover {
 .btn {
   font-weight: bold;
 }
-.form-group label,
-.list-group-item {
-  font-size: 1.4rem;
+
+.buttons{
+  border-radius: 5px;
 }
 
 .navbar .btn {
   flex:1;
 }
-@media (min-width:768px){
-    .navbar .btn {
-      flex: 0 1 auto;
-    }
+
+.create-btn{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 2rem;
 }
-.acciones {
+
+.action-btn{
+  width: 120px;
+}
+
+.add-btn{
+  width: 300px;
+  border-radius: 5px;
+}
+
+.list-group-item {
+  font-size: 1.4rem;
+}
+
+.form-group label{
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.actions {
   margin: 1rem 0;
 }
-@media (min-width:768px) {
-  .acciones{
-    margin: 0;
-  }
-}
-.acciones > *{
+
+.actions > *{
   flex: 1;
 }
+
 .no-product {
   color: #fff;
   height: 50px;
@@ -57,6 +77,15 @@ h1 a.text-light:hover {
   align-items: center;
 }
 
+.icon {
+  padding-right: 7px;
+}
+
+.title-container{
+ width: 100%;
+ display: flex;
+ justify-content: center;
+}
 
 .sk-chase {
   width: 40px;
@@ -112,4 +141,22 @@ h1 a.text-light:hover {
   } 100%, 0% {
     transform: scale(1.0); 
   } 
+}
+
+@media (min-width:768px){
+  .navbar .btn {
+    flex: 0 1 auto;
+  }
+}
+
+@media (min-width:768px) {
+  .actions{
+    margin: 0;
+  }
+}
+
+@media (max-width:510px) {
+  .edit-btn{
+    margin-bottom: 12px;
+  }
 }

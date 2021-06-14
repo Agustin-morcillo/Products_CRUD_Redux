@@ -4,18 +4,13 @@ import {Link} from "react-router-dom"
 export default function Header() {
     return (
         <nav className="navbar navbar-expand-lg navbar-dark bg-primary justify-content-between">
-            <div className="container">
+            <div className="title-container">
                 <h1>
-                    <Link to={"/"} className="text-light">
+                    <Link to={"/"} className="text-light page-title">
                         CRUD - React, Redux, REST API & Axios
                     </Link>
                 </h1>
-               
             </div>
-
-            <Link to={"/products/create"} 
-                className="btn btn-danger nuevo-post d-block d-md-inline-block">
-            Agregar Producto &#43;</Link>
         </nav>
     )
 }

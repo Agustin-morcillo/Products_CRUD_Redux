@@ -1,33 +1,33 @@
 {
   "products": [
     {
-      "id": 1,
-      "name": "Jugo de Zanahorias",
-      "price": "500"
+      "name": "Jugo de Zanahoria",
+      "price": 300,
+      "id": 1
     },
     {
-      "id": 2,
-      "name": "Jugo de Naranja",
-      "price": "200"
+      "name": "Licuado de Frutilla",
+      "price": 550,
+      "id": 2
     },
     {
       "name": "Jugo de Naranja",
-      "price": "300",
+      "price": 400,
       "id": 3
     },
     {
       "name": "Rib Eye 800g",
-      "price": "200",
+      "price": 800,
       "id": 4
     },
     {
       "name": "Jugo de Fresa",
-      "price": "200",
+      "price": 760,
       "id": 5
     },
     {
-      "name": "Agustin",
-      "price": 200,
+      "name": "Licuado de Banana",
+      "price": 420,
       "id": 6
     }
   ]
