@@ -1,14 +1,14 @@
-import React from 'react'
+import React from "react"
 
 export default function Spinner() {
-    return (
-        <div className="sk-chase">
-            <div className="sk-chase-dot"></div>
-            <div className="sk-chase-dot"></div>
-            <div className="sk-chase-dot"></div>
-            <div className="sk-chase-dot"></div>
-            <div className="sk-chase-dot"></div>
-            <div className="sk-chase-dot"></div>
-        </div>
-    )
+  return (
+    <div className="sk-chase">
+      <div className="sk-chase-dot"></div>
+      <div className="sk-chase-dot"></div>
+      <div className="sk-chase-dot"></div>
+      <div className="sk-chase-dot"></div>
+      <div className="sk-chase-dot"></div>
+      <div className="sk-chase-dot"></div>
+    </div>
+  )
 }
