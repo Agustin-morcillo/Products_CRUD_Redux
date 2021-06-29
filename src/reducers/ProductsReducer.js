@@ -13,7 +13,6 @@ import {
   PRODUCT_EDIT_ERROR,
 } from "../types"
 
-//Cada reducer tiene su propio state
 const initalState = {
   products: [],
   error: false,
@@ -29,6 +28,13 @@ export default function ProductsReducer(state = initalState, action) {
       return {
         ...state,
         loading: action.payload,
+      }
+    case GET_PRODUCTS_SUCCESSFUL:
+      return {
+        ...state,
+        products: action.payload,
+        error: false,
+        loading: false,
       }
     case ADD_PRODUCT_SUCCESSFUL:
       return {
@@ -48,12 +54,18 @@ export default function ProductsReducer(state = initalState, action) {
         productToDelete: null,
         productToEdit: null,
       }
-    case GET_PRODUCTS_SUCCESSFUL:
+    case PRODUCT_TO_EDIT:
       return {
         ...state,
-        products: action.payload,
-        error: false,
-        loading: false,
+        productToEdit: action.payload,
+      }
+    case PRODUCT_EDIT_SUCCESSFUL:
+      return {
+        ...state,
+        products: state.products.map((product) =>
+          product._id === action.payload._id ? action.payload : product
+        ),
+        productToEdit: null,
       }
     case PRODUCT_TO_DELETE:
       return {
@@ -64,22 +76,9 @@ export default function ProductsReducer(state = initalState, action) {
       return {
         ...state,
         products: state.products.filter(
-          (product) => product.id !== state.productToDelete
+          (product) => product._id !== state.productToDelete
         ),
         productToDelete: null,
-      }
-    case PRODUCT_TO_EDIT:
-      return {
-        ...state,
-        productToEdit: action.payload,
-      }
-    case PRODUCT_EDIT_SUCCESSFUL:
-      return {
-        ...state,
-        products: state.products.map((product) =>
-          product.id === action.payload.id ? action.payload : product
-        ),
-        productToEdit: null,
       }
     default:
       return state

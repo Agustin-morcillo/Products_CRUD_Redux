@@ -1,20 +1,19 @@
 import React, { useState, useEffect } from "react"
 import { useDispatch, useSelector } from "react-redux"
 import PropTypes from "prop-types"
-import Spinner from "../components/Spinner"
+import Spinner from "./Spinner"
 
-/* Redux actions */
 import { createProductAction } from "../actions/ProductsAction"
 import { showAlertAction, hideAlertAction } from "../actions/AlertsAction"
 
-export default function NewProduct({ history }) {
+export default function CreateProduct({ history }) {
   const [name, setName] = useState("")
   const [price, setPrice] = useState("")
 
-  // Utilizamos useDispatch que nos devuelve una funcion
+  /* Redux dispatch action */
   const dispatch = useDispatch()
 
-  //Acceder al state del store
+  /* Redux states */
   const loading = useSelector((state) => state.products.loading)
   const error = useSelector((state) => state.products.error)
   const alert = useSelector((state) => state.alerts.alert)
@@ -24,13 +23,15 @@ export default function NewProduct({ history }) {
     // eslint-disable-next-line
   }, [])
 
-  // Llamamos el action de ProductAction
-  const addNewProduct = (product) =>
+  /* Function to create a new product */
+  const addNewProduct = (product) => {
     dispatch(createProductAction(product, history))
+  }
 
   const handleSubmit = (e) => {
     e.preventDefault()
 
+    /* Validation */
     if (!name.trim() || price === "") {
       const alert = {
         msg: "Ambos campos son obligatorios",
@@ -47,8 +48,8 @@ export default function NewProduct({ history }) {
 
     dispatch(hideAlertAction())
 
-    //crear nuevo producto
-    addNewProduct({
+    /* Create new product */
+    return addNewProduct({
       name,
       price,
     })
@@ -116,6 +117,6 @@ export default function NewProduct({ history }) {
   )
 }
 
-NewProduct.propTypes = {
+CreateProduct.propTypes = {
   history: PropTypes.object,
 }

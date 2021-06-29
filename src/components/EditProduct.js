@@ -12,7 +12,6 @@ export default function EditProduct() {
   const [editedProduct, setEditedProduct] = useState({
     name: "",
     price: "",
-    id: "",
   })
   const { name, price } = editedProduct
 
@@ -31,7 +30,7 @@ export default function EditProduct() {
   }, [productToEdit])
 
   const handleChange = (e) => {
-    setEditedProduct({
+    return setEditedProduct({
       ...editedProduct,
       [e.target.name]: e.target.value,
     })
@@ -58,7 +57,7 @@ export default function EditProduct() {
 
     dispatch(editProductAction(editedProduct))
 
-    history.push("/")
+    return history.push("/")
   }
 
   return (

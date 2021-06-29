@@ -4,7 +4,6 @@ import { Link } from "react-router-dom"
 import Product from "./Product"
 import Spinner from "./Spinner"
 
-/* Redux actions */
 import { getProductsAction } from "../actions/ProductsAction"
 
 export default function Products() {
@@ -59,7 +58,7 @@ export default function Products() {
           </thead>
           <tbody>
             {products.map((product) => (
-              <Product key={product.id + 1} product={product} />
+              <Product key={product._id + 1} product={product} />
             ))}
           </tbody>
         </table>

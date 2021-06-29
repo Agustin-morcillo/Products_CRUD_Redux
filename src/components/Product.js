@@ -3,14 +3,13 @@ import { useHistory } from "react-router-dom"
 import { useDispatch } from "react-redux"
 import Swal from "sweetalert2"
 
-/* Redux actions */
 import {
   deleteProductAction,
   getProductToEditAction,
 } from "../actions/ProductsAction"
 
 export default function Product({ product }) {
-  const { name, price, id } = product
+  const { name, price, _id } = product
 
   const dispatch = useDispatch()
   const history = useHistory()
@@ -31,9 +30,10 @@ export default function Product({ product }) {
     }
   }
 
+  /*   Identify the product to edit and redirect to the view */
   const EditProductRedirect = (product) => {
     dispatch(getProductToEditAction(product))
-    history.push(`/products/edit/${product.id}`)
+    history.push(`/products/edit/${product._id}`)
   }
 
   return (
@@ -54,7 +54,7 @@ export default function Product({ product }) {
         <button
           type="button"
           className="btn btn-danger buttons action-btn"
-          onClick={() => deleteProduct(id)}
+          onClick={() => deleteProduct(_id)}
         >
           <i className="far fa-trash-alt icon"></i>Eliminar
         </button>
