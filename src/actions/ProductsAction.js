@@ -146,7 +146,7 @@ export function deleteProductAction(id) {
     dispatch(getProductToDelete(id))
 
     try {
-      await axiosClient.delete(`products/${id}`)
+      await axiosClient.delete(`/products/${id}`)
       dispatch(deleteProductSuccessful())
       getProductsAction()
       Swal.fire("Eliminado", "El producto se elimino correctamente", "success")
