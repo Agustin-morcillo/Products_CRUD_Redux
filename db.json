@@ -1,13 +1,13 @@
 {
   "products": [
     {
-      "name": "Jugo de Zanahorias",
-      "price": "10",
+      "name": "Jugo de Zanahoria",
+      "price": 530,
       "id": 1
     },
     {
-      "name": "Licuado de Frutillas",
-      "price": "10",
+      "name": "Licuado de Frutilla",
+      "price": 750,
       "id": 2
     },
     {
@@ -21,13 +21,13 @@
       "id": 4
     },
     {
-      "name": "Jugo de Fresa",
+      "name": "Jugo de Fresas",
       "price": 760,
       "id": 5
     },
     {
-      "name": "Licuad",
-      "price": "500",
+      "name": "Licuado de Banana",
+      "price": 500,
       "id": 6
     }
   ]

@@ -2,11 +2,11 @@ import React, { useEffect } from "react"
 import { useDispatch, useSelector } from "react-redux"
 import { Link } from "react-router-dom"
 import Product from "./Product"
-import Spinner from "./Spinner"
+import Spinner from "../Spinner"
 
-import { getProductsAction } from "../actions/ProductsAction"
+import { getProductsAction } from "../../actions/ProductsAction"
 
-export default function Products() {
+export default function ProductsList() {
   const dispatch = useDispatch()
 
   const products = useSelector((state) => state.products.products)

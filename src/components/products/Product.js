@@ -6,7 +6,7 @@ import Swal from "sweetalert2"
 import {
   deleteProductAction,
   getProductToEditAction,
-} from "../actions/ProductsAction"
+} from "../../actions/ProductsAction"
 
 export default function Product({ product }) {
   const { name, price, _id } = product
@@ -30,7 +30,7 @@ export default function Product({ product }) {
     }
   }
 
-  /*   Identify the product to edit and redirect to the view */
+  /* Identify the product to edit and redirect to the view */
   const EditProductRedirect = (product) => {
     dispatch(getProductToEditAction(product))
     history.push(`/products/edit/${product._id}`)
