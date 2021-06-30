@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react"
 import { useDispatch, useSelector } from "react-redux"
 import PropTypes from "prop-types"
+
 import Spinner from "../Spinner"
 
 import { createProductAction } from "../../actions/ProductsAction"
@@ -10,6 +11,11 @@ export default function CreateProduct({ history }) {
   const [name, setName] = useState("")
   const [price, setPrice] = useState("")
 
+  useEffect(() => {
+    dispatch(hideAlertAction())
+    // eslint-disable-next-line
+  }, [])
+
   /* Redux dispatch action */
   const dispatch = useDispatch()
 
@@ -17,11 +23,6 @@ export default function CreateProduct({ history }) {
   const loading = useSelector((state) => state.products.loading)
   const error = useSelector((state) => state.products.error)
   const alert = useSelector((state) => state.alerts.alert)
-
-  useEffect(() => {
-    dispatch(hideAlertAction())
-    // eslint-disable-next-line
-  }, [])
 
   /* Function to create a new product */
   const addNewProduct = (product) => {

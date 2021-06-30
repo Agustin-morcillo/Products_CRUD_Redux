@@ -6,14 +6,14 @@ import { editProductAction } from "../../actions/ProductsAction"
 import { showAlertAction, hideAlertAction } from "../../actions/AlertsAction"
 
 export default function EditProduct() {
-  const dispatch = useDispatch()
-  const history = useHistory()
-
   const [editedProduct, setEditedProduct] = useState({
     name: "",
     price: "",
   })
   const { name, price } = editedProduct
+
+  const dispatch = useDispatch()
+  const history = useHistory()
 
   const productToEdit = useSelector((state) => state.products.productToEdit)
   const alert = useSelector((state) => state.alerts.alert)

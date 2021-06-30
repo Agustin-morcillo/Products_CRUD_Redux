@@ -1,3 +1,6 @@
+import axiosClient from "../config/axios"
+import Swal from "sweetalert2"
+
 import {
   ADD_PRODUCT_LOADING,
   ADD_PRODUCT_SUCCESSFUL,
@@ -12,8 +15,6 @@ import {
   PRODUCT_EDIT_SUCCESSFUL,
   PRODUCT_EDIT_ERROR,
 } from "../types"
-import axiosClient from "../config/axios"
-import Swal from "sweetalert2"
 
 /* Get all products from the database */
 export function getProductsAction() {
