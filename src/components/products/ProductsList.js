@@ -47,7 +47,7 @@ export default function ProductsList() {
       )}
 
       {products.length < 1 ? (
-        <p className="no-product bg-info">No hay productos</p>
+        <p className="no-product bg-info">Aún no hay productos</p>
       ) : (
         <table className="table table-striped">
           <thead className="bg-primary table-dark">
