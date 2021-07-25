@@ -28,7 +28,7 @@ registros de una base de datos (MongoDB) alojada en la nube.
 **Products CRUD using React Redux.** All the actions update the records of a
 database (MongoDB) hosted in the cloud.
 
-**It was used:**
+**Used technologies:**
 
 - **React Redux**
 - **React Hooks**
